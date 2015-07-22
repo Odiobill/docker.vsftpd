@@ -1,11 +1,9 @@
 # debian-based container for vsftpd
-# VERSION               0.1
-FROM debian
+# VERSION               0.2
+FROM debian:jessie
 MAINTAINER Davide Lucchesi  "davide@lucchesi.nl"
 
-RUN apt-get update
-RUN apt-get dist-upgrade -y
-RUN apt-get install -y --no-install-recommends vsftpd
+RUN apt-get update && apt-get install -y --no-install-recommends vsftpd
 RUN apt-get clean
 
 RUN echo "local_enable=YES" >> /etc/vsftpd.conf
