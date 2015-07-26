@@ -1,5 +1,5 @@
 # debian-based container for vsftpd
-# VERSION               0.2
+# VERSION               0.3
 FROM debian:jessie
 MAINTAINER Davide Lucchesi  "davide@lucchesi.nl"
 
@@ -18,5 +18,5 @@ VOLUME /etc
 
 EXPOSE 21
 
-CMD service vsftpd start && tail -f /var/log/vsftpd.log
+CMD /usr/sbin/vsftpd
 
